@@ -1,0 +1,24 @@
+/* Robert Walters brand tokens (extracted from https://www.robertwalters.co.uk/) */
+:root {
+  --heading-font-family: outfit, outfit-fallback, sans-serif;
+  --body-font-family: outfit, outfit-fallback, sans-serif;
+  --background-color: #fff;
+  --text-color: #232323;
+  --link-color: #232323;
+  --link-hover-color: #232323;
+  --accent-color: #ff4d66;
+  --dark-color: #232323;
+  --light-color: #e9e9e9;
+  --light-tint-color: rgb(232 232 232 / 30%);
+  --border-color: #e9e9e9;
+  --muted-text-color: #656565;
+  --section-padding: 0;
+  --content-max-width: 1140px;
+  --nav-height: 145px;
+  --heading-size-xxl: 64px;
+  --heading-size-xl: 44px;
+  --heading-size-l: 32px;
+  --heading-size-m: 24px;
+  --heading-size-s: 18px;
+  --heading-size-xs: 16px;
+}

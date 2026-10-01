@@ -1,0 +1,219 @@
+/* search-jobs: light job-search strip (source: .rw-jobs-search-box.job-search--light) */
+
+/* ---------- section: full-bleed white strip with soft shadow ---------- */
+main > .section.search-jobs-container {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 30px;
+  background-color: var(--background-color);
+  box-shadow: 0 0 4px rgb(67 71 85 / 27%), 0 4px 16px rgb(90 125 188 / 5%);
+}
+
+/* the source strip sits flush against the bottom of the hero: cancel the
+   hero section's 48px bottom margin (collapsing margins: 48px + -48px = 0) */
+main > .section.hero-video-container + .section.search-jobs-container {
+  margin-top: -48px;
+}
+
+/* source ".hero-large ~ .rw-jobs-search-box { margin-top: -1.5rem }": between
+   768px and its 1024px desktop layout the hero has no bottom margin to absorb
+   it, so the strip overlaps the hero by 24px */
+@media (768px <= width < 1024px) {
+  main > .section.hero-video-container + .section.search-jobs-container {
+    margin-top: -72px;
+  }
+}
+
+/* the strip owns the spacing below it (source margin-bottom) */
+main > .section.search-jobs-container + .section {
+  margin-top: 0;
+}
+
+main > .section.search-jobs-container > .search-jobs-wrapper {
+  padding: 0 36px;
+}
+
+/* ---------- block layout (mobile: stacked, centred) ---------- */
+.search-jobs {
+  --search-jobs-icon-search: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23ff4d66' stroke-width='1.6' stroke-linecap='round'%3E%3Ccircle cx='6.75' cy='6.75' r='5.6'/%3E%3Cpath d='M10.9 10.9 15 15'/%3E%3C/svg%3E");
+  --search-jobs-icon-location: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 16' fill='none' stroke='%23ff4d66' stroke-width='1.4'%3E%3Cpath d='M6 15.1S1 9.6 1 6a5 5 0 0 1 10 0c0 3.6-5 9.1-5 9.1Z' stroke-linejoin='round'/%3E%3Ccircle cx='6' cy='6' r='1.9'/%3E%3C/svg%3E");
+  --search-jobs-icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10' fill='none' stroke='%23ff4d66' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 1.5 8 8l6.5-6.5'/%3E%3C/svg%3E");
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 40px 0;
+  color: var(--text-color);
+}
+
+.search-jobs .search-jobs-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+}
+
+.search-jobs .search-jobs-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  text-align: center;
+}
+
+/* ---------- fields ---------- */
+.search-jobs .search-jobs-field {
+  position: relative;
+}
+
+.search-jobs .search-jobs-field input,
+.search-jobs .search-jobs-field select {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 48px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 8px 14px 8px 41px;
+  background-color: var(--light-color);
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), inset 0 0 0 1px #d1d5db;
+  color: var(--muted-text-color);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  appearance: none;
+}
+
+.search-jobs .search-jobs-field input::placeholder {
+  color: var(--muted-text-color);
+  font-weight: 400;
+  opacity: 1;
+}
+
+.search-jobs .search-jobs-field select {
+  cursor: pointer;
+}
+
+/* pink icons: search (keyword), pin + chevron (location) */
+.search-jobs .search-jobs-keyword::before,
+.search-jobs .search-jobs-location::before,
+.search-jobs .search-jobs-location::after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.search-jobs .search-jobs-keyword::before {
+  left: 14px;
+  background-image: var(--search-jobs-icon-search);
+  background-size: 16px 16px;
+}
+
+.search-jobs .search-jobs-location::before {
+  left: 13px;
+  background-image: var(--search-jobs-icon-location);
+  background-size: 12px 16px;
+}
+
+.search-jobs .search-jobs-location::after {
+  right: 13px;
+  background-image: var(--search-jobs-icon-chevron);
+  background-size: 16px 10px;
+}
+
+/* ---------- submit ---------- */
+.search-jobs .search-jobs-submit {
+  width: 100%;
+  margin: 0;
+  padding: 12px 38px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 23px;
+}
+
+/* ---------- "Looking to hire?" link ---------- */
+.search-jobs .search-jobs-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.search-jobs a.search-jobs-link:any-link {
+  background-image: linear-gradient(90deg, var(--accent-color) 100%, var(--accent-color) 0);
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 2px, 0 2px;
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  transition: background-size 2s linear;
+}
+
+.search-jobs a.search-jobs-link:any-link:hover,
+.search-jobs a.search-jobs-link:any-link:focus-visible {
+  animation: link-underline 0.5s;
+}
+
+/* ---------- desktop: single centred row (source breakpoint 1024px) ---------- */
+@media (width >= 1024px) {
+  main > .section.search-jobs-container {
+    margin-bottom: 50px;
+  }
+
+  main > .section.search-jobs-container > .search-jobs-wrapper {
+    padding: 0;
+  }
+
+  .search-jobs {
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .search-jobs .search-jobs-form {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .search-jobs .search-jobs-label {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .search-jobs .search-jobs-field {
+    flex: 0 0 auto;
+    width: 224px;
+  }
+
+  .search-jobs .search-jobs-location::after {
+    right: 14px;
+  }
+
+  .search-jobs .search-jobs-submit {
+    width: auto;
+  }
+
+  .search-jobs .search-jobs-links {
+    justify-content: flex-start;
+  }
+}
+
+@media (width >= 1200px) {
+  .search-jobs .search-jobs-field {
+    width: 300px;
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "variantName": "search-jobs",
+  "baseBlock": "search",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "job-search",
+    "imagePattern": "noimg",
+    "structure": "label + keyword input + location select + button + link"
+  },
+  "contentPattern": "Row 1: 'Looking for a job?' label. Row 2: link to jobs search target (/jobs.html). Row 3: location options (list). Row 4: 'Looking to hire?' link.",
+  "usage": {
+    "pagesUsing": ["https://www.robertwalters.co.uk/"],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-30"
+  },
+  "options": [],
+  "memberVariantIds": ["search-jobs"]
+}

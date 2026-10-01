@@ -1,0 +1,20 @@
+{
+  "variantName": "columns-promo",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "normal",
+    "purpose": "promo-cta",
+    "imagePattern": "image-right-accent",
+    "structure": "heading + paragraph + CTA | image"
+  },
+  "contentPattern": "1 row, 2 columns: [heading, paragraph, primary CTA link, secondary link | image]",
+  "usage": {
+    "pagesUsing": ["https://www.robertwalters.co.uk/"],
+    "reuseCount": 2,
+    "lastUsed": "2026-09-30"
+  },
+  "options": [],
+  "memberVariantIds": ["columns-promo"]
+}

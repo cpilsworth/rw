@@ -1,0 +1,337 @@
+.columns-insights {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  color: var(--text-color);
+}
+
+.columns-insights .columns-insights-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* column heading + "View all" */
+.columns-insights .columns-insights-header > * {
+  margin: 0;
+}
+
+.columns-insights .columns-insights-header > :is(h1, h2, h3, h4, h5, h6) {
+  margin-bottom: 6px;
+
+  /* source: bootstrap fluid h4, calc(1.275rem + .3vw) below 1200px, 1.5rem above */
+  font-size: calc(1.275rem + 0.3vw);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text-color);
+}
+
+.columns-insights .columns-insights-header > p {
+  margin-bottom: 32px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.columns-insights .columns-insights-items {
+  display: grid;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.columns-insights .columns-insights-item-image picture {
+  display: block;
+}
+
+.columns-insights .columns-insights-item-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.columns-insights .columns-insights-item-body > :first-child {
+  margin-top: 0;
+}
+
+.columns-insights .columns-insights-item-body > :last-child {
+  margin-bottom: 0;
+}
+
+/* article cards: image on top, stacked body */
+.columns-insights .columns-insights-cards {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 36px;
+}
+
+.columns-insights .columns-insights-cards .columns-insights-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-insights .columns-insights-cards .columns-insights-item-image {
+  position: relative;
+  box-sizing: border-box;
+  aspect-ratio: 318 / 179;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background-color: var(--light-color);
+  line-height: 0;
+}
+
+/* category chip over the image */
+.columns-insights .columns-insights-cards .columns-insights-item-tag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  margin: 0;
+}
+
+.columns-insights .columns-insights-cards .columns-insights-item-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  border-top: 0;
+  padding: 30px 20px 18px;
+}
+
+.columns-insights .columns-insights-cards .columns-insights-item-title {
+  margin: 0 0 16px;
+  font-size: var(--heading-size-s);
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.columns-insights .columns-insights-cards .columns-insights-item-text {
+  flex-grow: 1;
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 23px;
+}
+
+/* source clamps the excerpt server-side and appends an ellipsis (its -3px offset
+   only compensates a trailing space that the authored text does not have) */
+.columns-insights .columns-insights-cards .columns-insights-item-text::after {
+  content: "...";
+}
+
+.columns-insights .columns-insights-cards .columns-insights-item-cta {
+  margin: 0;
+  line-height: 24px;
+}
+
+/* tag list: 1px rule, pink "|" separators */
+.columns-insights .columns-insights-cards .columns-insights-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 4px;
+  margin: 38px 0 0;
+  border-top: 1px solid var(--border-color);
+  padding-top: 16px;
+  color: var(--muted-text-color);
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  line-height: 16px;
+}
+
+.columns-insights .columns-insights-item-meta > * {
+  display: flex;
+  align-items: center;
+  color: var(--muted-text-color);
+  font-size: 13px;
+  line-height: 1;
+}
+
+.columns-insights .columns-insights-item-meta > * + *::before {
+  content: "|";
+  align-self: center;
+  padding: 0 8px;
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+/* thumbnail tiles: square image beside the title */
+.columns-insights .columns-insights-tiles {
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  gap: 20px;
+}
+
+.columns-insights .columns-insights-tiles .columns-insights-item {
+  display: grid;
+
+  /* auto minimum (flex min-width on the source): the title column never gets
+     narrower than its longest word, so it overflows the tile like the source */
+  grid-template-columns: 85px 1fr;
+  align-items: center;
+  gap: 18px;
+}
+
+.columns-insights .columns-insights-tiles .columns-insights-item-image {
+  aspect-ratio: 1;
+  line-height: 0;
+}
+
+.columns-insights .columns-insights-tiles .columns-insights-item-image picture {
+  height: 100%;
+}
+
+.columns-insights .columns-insights-tiles .columns-insights-item-body > * {
+  margin: 0;
+  font-size: var(--heading-size-s);
+  font-weight: 500;
+  line-height: 24px;
+}
+
+/* links (ordered by ascending specificity; "main" prefix beats the global
+   pink-underline rule main p > a:any-link:not(.button)) */
+.columns-insights .columns-insights-item-image a {
+  display: block;
+}
+
+.columns-insights .columns-insights-cards .columns-insights-item-image > a {
+  position: absolute;
+  inset: 0;
+}
+
+.columns-insights .columns-insights-tiles .columns-insights-item-image a {
+  height: 100%;
+}
+
+main .columns-insights .columns-insights-header a:any-link {
+  display: inline-block;
+  font-weight: 400;
+}
+
+main .columns-insights .columns-insights-item-tag a:any-link {
+  display: block;
+  padding: 8px 12px;
+  background: var(--accent-color);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  animation: none;
+}
+
+main .columns-insights .columns-insights-item-cta a:any-link {
+  display: inline-block;
+  font-weight: 400;
+}
+
+main .columns-insights .columns-insights-item-meta > a:any-link {
+  background: none;
+  color: var(--muted-text-color);
+  font-weight: 400;
+  animation: none;
+}
+
+.columns-insights .columns-insights-cards .columns-insights-item-title a:any-link {
+  color: var(--text-color);
+}
+
+main .columns-insights .columns-insights-item-tag a:any-link:hover {
+  color: #fff;
+  opacity: 0.9;
+}
+
+main .columns-insights .columns-insights-item-meta > a:any-link:hover {
+  color: var(--accent-color);
+}
+
+/* source titles never break inside a word: in the narrow 768px column long words
+   overflow the tile rather than adding lines */
+main .columns-insights .columns-insights-tiles .columns-insights-item-body a:any-link {
+  overflow-wrap: normal;
+  background: none;
+  color: var(--text-color);
+  font-weight: 500;
+  animation: none;
+}
+
+@media (width >= 768px) {
+  /* source (bootstrap md): 8/4 split with a 36px gutter; the two article cards
+     share the 8 columns (col-md-6 each), the tile list takes the 4 */
+  .columns-insights.columns-insights-2-cols {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) calc((100% - 72px) / 3);
+    gap: 0 36px;
+  }
+
+  .columns-insights .columns-insights-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .columns-insights .columns-insights-header > :is(h1, h2, h3, h4, h5, h6) {
+    margin-bottom: 12px;
+  }
+
+  .columns-insights .columns-insights-header > p {
+    margin-bottom: 30px;
+  }
+
+  .columns-insights .columns-insights-item-meta > * {
+    font-size: 11px;
+  }
+
+  .columns-insights .columns-insights-tiles {
+    gap: 25px;
+  }
+
+  .columns-insights .columns-insights-tiles .columns-insights-item {
+    grid-template-columns: 130px 1fr;
+  }
+}
+
+/* source quirk at exactly 768px: its "max-width: 768px" rule makes the header
+   col-8 full width, so "Career advice" wraps under "Talent insights" while the
+   content row below is already split 8/4 */
+@media (width = 768px) {
+  .columns-insights.columns-insights-2-cols > .columns-insights-group {
+    display: contents;
+  }
+
+  .columns-insights.columns-insights-2-cols > .columns-insights-group:first-child > .columns-insights-header {
+    grid-area: 1 / 1 / 2 / -1;
+  }
+
+  .columns-insights.columns-insights-2-cols > .columns-insights-group:last-child > .columns-insights-header {
+    grid-area: 2 / 1;
+  }
+
+  .columns-insights.columns-insights-2-cols > .columns-insights-group:first-child > .columns-insights-items {
+    grid-area: 3 / 1;
+  }
+
+  .columns-insights.columns-insights-2-cols > .columns-insights-group:last-child > .columns-insights-items {
+    grid-area: 3 / 2;
+  }
+}
+
+@media (width >= 900px) {
+  .columns-insights.columns-insights-3-cols {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 36px;
+  }
+
+  .columns-insights .columns-insights-cards .columns-insights-item-body {
+    padding-top: 13px;
+  }
+}
+
+@media (width >= 1200px) {
+  .columns-insights .columns-insights-header > :is(h1, h2, h3, h4, h5, h6) {
+    font-size: 1.5rem;
+  }
+
+  .columns-insights .columns-insights-cards .columns-insights-item-body {
+    padding-top: 17px;
+  }
+}

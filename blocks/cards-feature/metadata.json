@@ -1,0 +1,20 @@
+{
+  "variantName": "cards-feature",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "normal",
+    "purpose": "feature-links",
+    "imagePattern": "top-image-3col",
+    "structure": "image + paragraph + link"
+  },
+  "contentPattern": "3 rows, 2 columns: [image | paragraph, link]",
+  "usage": {
+    "pagesUsing": ["https://www.robertwalters.co.uk/"],
+    "reuseCount": 2,
+    "lastUsed": "2026-09-30"
+  },
+  "options": [],
+  "memberVariantIds": ["cards-feature"]
+}

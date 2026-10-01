@@ -1,0 +1,76 @@
+/* Two source layouts:
+   - standalone (block opens its section): images start at the section top; the
+     text sits two blank lines (48px) below the image and has the .cmp-text
+     paragraph margin (20px, 25px >= 768px) above the link.
+   - after default content (e.g. "Our services" heading): a 24px spacer line
+     sits above the grid (padding, so it adds to rather than collapses with the
+     heading margin) and the text is framed by single 24px spacer lines. */
+.default-content-wrapper + .cards-feature-wrapper > .cards-feature {
+  padding-top: 24px;
+}
+
+.cards-feature > ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards-feature .cards-feature-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-feature .cards-feature-card-image {
+  line-height: 0;
+}
+
+.cards-feature .cards-feature-card-image a {
+  display: block;
+}
+
+.cards-feature .cards-feature-card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cards-feature .cards-feature-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-top: 48px;
+  color: var(--text-color);
+  font-size: var(--body-font-size-m);
+  line-height: 24px;
+}
+
+.default-content-wrapper + .cards-feature-wrapper > .cards-feature .cards-feature-card-body {
+  margin-top: 24px;
+}
+
+.cards-feature .cards-feature-card-body > * {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.default-content-wrapper + .cards-feature-wrapper > .cards-feature .cards-feature-card-body > :not(:last-child) {
+  margin-bottom: 24px;
+}
+
+/* the trailing link follows its own text (source cards are not bottom-aligned) */
+.cards-feature .cards-feature-card-body > :last-child {
+  margin-bottom: 0;
+}
+
+@media (width >= 768px) {
+  .cards-feature > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards-feature .cards-feature-card-body > * {
+    margin-bottom: 25px;
+  }
+}

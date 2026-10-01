@@ -1,0 +1,20 @@
+{
+  "variantName": "tabs-areas",
+  "baseBlock": "tabs",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "normal",
+    "purpose": "expertise-selector",
+    "imagePattern": "single-preview-card",
+    "structure": "link list + associated card"
+  },
+  "contentPattern": "9 rows, 2 columns: [area label (link to expertise page) | image, title (strong/h3), description, 'Learn More' link]",
+  "usage": {
+    "pagesUsing": ["https://www.robertwalters.co.uk/"],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-30"
+  },
+  "options": [],
+  "memberVariantIds": ["tabs-areas"]
+}

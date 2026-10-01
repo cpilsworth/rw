@@ -1,0 +1,20 @@
+{
+  "variantName": "columns-insights",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "normal",
+    "purpose": "latest-articles",
+    "imagePattern": "cards-and-thumbnails",
+    "structure": "heading + view all + article cards | heading + view all + thumbnail tiles"
+  },
+  "contentPattern": "1 row, 2 columns: [h4 'Talent insights', 'View all' link, then per article: image, tag link, title link, excerpt, 'Read More' link, tag links | h4 'Career advice', 'View all' link, then per tile: image + title link]",
+  "usage": {
+    "pagesUsing": ["https://www.robertwalters.co.uk/"],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-30"
+  },
+  "options": [],
+  "memberVariantIds": ["columns-insights"]
+}

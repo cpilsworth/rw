@@ -1,20 +1,512 @@
-footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+/* Footer block — mobile-first. Bands are built by footer.js from the footer fragment. */
+
+.footer {
+  --footer-dark: var(--dark-color, #232323);
+  --footer-accent: var(--accent-color, #ff4d66);
+  --footer-text-dark: var(--text-color, #232323);
+  --footer-content-width: 1140px;
+
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 24px;
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
-}
-
-footer .footer p {
+.footer p,
+.footer ul {
   margin: 0;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+/* ---------- promo band ---------- */
+
+.footer .footer-promo {
+  position: relative;
+  margin: 60px 0 30px;
+  padding: 36px 0 96px;
+  color: #fff;
+  overflow-x: clip;
+}
+
+.footer .footer-promo-panel {
+  position: absolute;
+  top: 109px;
+  bottom: 64px;
+  left: 0;
+  width: calc(100% - 36px);
+  background-color: var(--footer-accent);
+}
+
+.footer .footer-promo-media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 332px;
+  max-width: calc(100% - 36px);
+  height: 182px;
+}
+
+.footer .footer-promo-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer .footer-promo-media-2 {
+  display: none;
+}
+
+.footer .footer-promo-content {
+  position: relative;
+  left: 36px;
+  width: calc(100% - 108px);
+  margin-top: 160px;
+}
+
+.footer .footer-promo-heading {
+  margin: 0 0 18px;
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.footer .footer-promo-text {
+  max-width: 480px;
+  margin: 0 0 16px;
+  color: var(--footer-text-dark);
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.footer .footer-promo-cta a.footer-promo-button {
+  display: inline-block;
+  padding: 14px 38px;
+  border: 2px solid transparent;
+  background-color: #fff;
+  color: var(--footer-text-dark);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 23px;
+  text-align: center;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.footer .footer-promo-cta a.footer-promo-button:hover,
+.footer .footer-promo-cta a.footer-promo-button:focus-visible {
+  border-color: #fff;
+  background-color: transparent;
+  color: var(--footer-text-dark);
+  text-decoration: none;
+}
+
+/* ---------- dark band (links + bottom bar) ---------- */
+
+.footer .footer-dark {
+  padding: 60px 0 58px;
+  background-color: var(--footer-dark);
+  color: #fff;
+}
+
+.footer .footer-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: var(--footer-content-width);
+  margin: 0 auto;
+}
+
+.footer .footer-brand {
+  width: 100%;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.footer .footer-brand a.footer-brand-link {
+  display: inline-block;
+  width: 175px;
+  height: 47px;
+}
+
+.footer .footer-brand a.footer-brand-link:hover {
+  text-decoration: underline;
+}
+
+.footer .footer-brand img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* stacked layout: link groups become items of a two-column grid, ordered by footer.js */
+.footer .footer-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  width: 100%;
+}
+
+.footer .footer-column {
+  display: contents;
+}
+
+.footer .footer-link-group,
+.footer .footer-consent,
+.footer .footer-link-note {
+  order: var(--footer-order, 0);
+}
+
+.footer .footer-link-group {
+  margin-bottom: 35px;
+  padding: 0 12px;
+}
+
+.footer .footer-link-group-wide,
+.footer .footer-consent,
+.footer .footer-link-note {
+  grid-column: 1 / -1;
+}
+
+.footer .footer-link-heading {
+  margin: 0 0 18px;
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.footer .footer-link-list {
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  list-style: none;
+}
+
+.footer .footer-link-list li {
+  margin: 0 0 6px;
+}
+
+/* grid items do not collapse the last item's margin into the group margin (source does) */
+.footer .footer-link-list li:last-child {
+  margin-bottom: 0;
+}
+
+.footer .footer-link-list a:any-link {
+  display: block;
+  min-height: 24px;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer .footer-link-list a:hover,
+.footer .footer-link-list a:focus-visible {
+  color: var(--footer-accent);
+  text-decoration: none;
+}
+
+.footer .footer-link-group-wide .footer-link-list {
+  column-count: 2;
+}
+
+.footer .footer-link-group-wide .footer-link-list li {
+  display: table;
+  break-inside: avoid;
+}
+
+/* a multi-column list keeps its last margin inside the columns (it is part of the balancing) */
+.footer .footer-link-group-wide .footer-link-list li:last-child {
+  margin-bottom: 6px;
+}
+
+/* stacked: the source overlays this control on the last row's bottom margin */
+.footer .footer-consent {
+  margin: -26px 0 2px;
+  padding: 3px 12px 0;
+  line-height: 21px;
+}
+
+.footer .footer-consent-button {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  cursor: pointer;
+  transition: color 0.1s;
+}
+
+.footer .footer-consent-button:hover,
+.footer .footer-consent-button:focus-visible {
+  color: var(--footer-accent);
+}
+
+/* bottom bar: social icons + copyright */
+.footer .footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: var(--footer-content-width);
+  margin: 20px auto 0;
+}
+
+.footer .footer-social {
+  display: flex;
+  gap: 25px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.footer .footer-social a.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--footer-dark);
+  border-radius: 50%;
+  color: #fff;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer .footer-social a.footer-social-link:hover,
+.footer .footer-social a.footer-social-link:focus-visible {
+  color: var(--footer-accent);
+}
+
+.footer .footer-social-icon {
+  display: block;
+  width: 18px;
+  height: 16px;
+  background-color: currentcolor;
+  mask: var(--footer-icon) center / contain no-repeat;
+}
+
+.footer .footer-legal {
+  margin: 0 0 26px;
+  padding: 0 12px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* ---------- tablet (source md layout at >= 768px) ---------- */
+@media (width >= 768px) {
+  .footer .footer-promo {
+    margin: 130px 0 106px;
+  }
+
+  .footer .footer-promo-panel {
+    width: 100%;
+  }
+
+  .footer .footer-promo-media {
+    width: 295px;
+    height: 285px;
+  }
+
+  .footer .footer-promo-media-2 {
+    display: block;
+    inset: auto auto 32px 0;
+    width: 119px;
+    height: 160px;
+  }
+
+  .footer .footer-promo-content {
+    left: 160px;
+    max-width: calc(100% - 160px);
+    margin: 113px 0 60px;
+  }
+
+  .footer .footer-promo-heading {
+    margin: 0 0 15px;
+    font-size: 80px;
+    font-weight: 700;
+  }
+
+  .footer .footer-promo-text {
+    max-width: 392px;
+  }
+
+  /* logo stays on its own row (left-aligned); link groups sit in one row of columns */
+  .footer .footer-main {
+    align-items: flex-start;
+  }
+
+  .footer .footer-brand {
+    text-align: left;
+  }
+
+  .footer .footer-columns {
+    display: flex;
+  }
+
+  /* left half: three equal columns; right half: the wide (locations) column */
+  .footer .footer-column {
+    display: block;
+    flex: 0 0 calc(100% / 6);
+    min-width: 0;
+  }
+
+  .footer .footer-column-wide {
+    flex-basis: 50%;
+    margin-left: auto;
+  }
+
+  .footer .footer-link-list li:last-child {
+    margin-bottom: 6px;
+  }
+
+  .footer .footer-link-group:has(+ .footer-consent) {
+    margin-bottom: 0;
+  }
+
+  /* inline-block button on a 24px line box: one line sits 3px low, two lines sit flush */
+  .footer .footer-consent {
+    margin: 0;
+    padding: 0 12px;
+    line-height: 24px;
+  }
+
+  /* text strut: keeps that line box when a page renders in quirks mode (no doctype) */
+  .footer .footer-consent::before {
+    content: "\200b";
+  }
+}
+
+/* ---------- small desktop (source lg layout at >= 992px) ---------- */
+@media (width >= 992px) {
+  .footer .footer-dark {
+    padding: 102px 0;
+  }
+
+  .footer .footer-main {
+    flex-direction: row;
+  }
+
+  .footer .footer-brand {
+    width: auto;
+    margin: 0 70px 0 0;
+  }
+
+  .footer .footer-columns {
+    flex: 1;
+  }
+
+  /* source columns are 1/6 of (links row + 24px gutter); content is inset by the 24px gutter */
+  .footer .footer-column {
+    flex: 0 1 calc((100% + 24px) / 6);
+  }
+
+  .footer .footer-column-wide {
+    flex: 0 1 calc((100% + 24px) / 2 - 84px);
+  }
+
+  .footer .footer-link-group {
+    margin-bottom: 30px;
+    padding: 0 24px 0 0;
+  }
+
+  .footer .footer-link-group-wide {
+    padding: 0;
+  }
+
+  .footer .footer-consent {
+    padding: 0 24px 0 0;
+  }
+
+  .footer .footer-link-heading {
+    margin: 0 0 22px;
+  }
+
+  .footer .footer-link-group-wide .footer-link-list {
+    column-count: 3;
+  }
+
+  .footer .footer-bottom {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .footer .footer-social {
+    margin: 0 64px 0 0;
+  }
+
+  .footer .footer-legal {
+    margin: 0;
+  }
+}
+
+@media (width >= 1024px) {
+  .footer .footer-promo-panel {
+    left: 40px;
+    width: calc(100% - 80px);
+  }
+
+  .footer .footer-promo-media-2 {
+    width: 160px;
+  }
+
+  .footer .footer-promo-content {
+    left: 200px;
+    max-width: calc(100% - 240px);
+    margin-bottom: 100px;
+  }
+}
+
+@media (width >= 1120px) {
+  .footer .footer-promo-panel {
+    left: 52px;
+    width: calc(100% - 104px);
+  }
+
+  .footer .footer-promo-content {
+    left: 224px;
+    width: calc(100% - 276px);
+  }
+}
+
+/* ---------- desktop (source layout at >= 1200px) ---------- */
+@media (width >= 1200px) {
+  .footer .footer-promo {
+    margin: 100px 0;
+  }
+
+  .footer .footer-promo-panel {
+    top: 160px;
+    left: calc(50% - 570px);
+    max-width: var(--footer-content-width);
+  }
+
+  .footer .footer-promo-media {
+    right: calc(50% - 858px);
+    width: 680px;
+    max-width: none;
+    height: 382px;
+  }
+
+  .footer .footer-promo-media-2 {
+    right: auto;
+    left: calc(50% - 570px);
+    width: 305px;
+    height: 209px;
+    transform: translateX(-50%);
+  }
+
+  .footer .footer-promo-content {
+    left: calc(50% - 374px);
+    max-width: 800px;
+    margin: 201px 0 100px;
   }
 }

@@ -1,0 +1,223 @@
+/* columns-promo: dark promo panel, text + image with pink accent shape (source: .rw-cta) */
+
+.columns-promo {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0 -15px;
+  padding: 66px 36px 33px;
+  overflow: hidden;
+  background-color: var(--dark-color);
+  color: #fff;
+}
+
+.columns-promo .columns-promo-row {
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+.columns-promo .columns-promo-row + .columns-promo-row {
+  margin-top: 54px;
+}
+
+/* text column */
+.columns-promo .columns-promo-text > :first-child {
+  margin-top: 0;
+}
+
+.columns-promo .columns-promo-text > :last-child {
+  margin-bottom: 0;
+}
+
+.columns-promo .columns-promo-text :is(h1, h2, h3, h4, h5, h6) {
+  margin: 0 0 20px;
+  font-size: var(--heading-size-xl);
+  font-weight: 700;
+  line-height: 47px;
+  color: #fff;
+  overflow-wrap: break-word;
+}
+
+.columns-promo .columns-promo-text p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25px;
+  color: #fff;
+}
+
+/* CTA row: primary button + optional text link */
+.columns-promo .columns-promo-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.columns-promo .columns-promo-actions > p {
+  width: 100%;
+  margin: 30px 0 0;
+  font-size: 16px;
+  line-height: 23px;
+  text-align: center;
+}
+
+.columns-promo .columns-promo-text a.button:any-link {
+  width: 100%;
+  padding: 14px 38px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 23px;
+}
+
+.columns-promo .columns-promo-actions > p > a:any-link:not(.button) {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* stacked CTAs (below 992px): the source link slot is a 24px line, and an
+   empty 30px-margin link slot still follows a lone primary button */
+@media (width < 992px) {
+  .columns-promo .columns-promo-actions > p:not(.button-wrapper) {
+    line-height: 24px;
+  }
+
+  .columns-promo .columns-promo-actions > p:only-child {
+    margin-bottom: 30px;
+  }
+}
+
+/* media column with pink accent shape */
+.columns-promo .columns-promo-media {
+  position: relative;
+  z-index: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 318px;
+  aspect-ratio: 318 / 186;
+  margin-bottom: 30px;
+  line-height: 0;
+}
+
+.columns-promo .columns-promo-media::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -30px;
+  right: -27px;
+  width: 162px;
+  height: 113px;
+  background-color: var(--accent-color);
+}
+
+.columns-promo .columns-promo-media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.columns-promo .columns-promo-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (width >= 768px) {
+  .columns-promo .columns-promo-text :is(h1, h2, h3, h4, h5, h6) {
+    overflow-wrap: normal;
+  }
+
+  .columns-promo .columns-promo-media::after {
+    top: -40px;
+  }
+}
+
+@media (width >= 992px) {
+  .columns-promo {
+    padding: 54px 90px 54px 120px;
+  }
+
+  .columns-promo .columns-promo-row {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    column-gap: 26px;
+  }
+
+  .columns-promo .columns-promo-row .columns-promo-text {
+    grid-area: 1 / 1;
+  }
+
+  .columns-promo .columns-promo-row .columns-promo-media {
+    grid-area: 1 / 2;
+    align-self: start;
+    max-width: 304px;
+    aspect-ratio: 304 / 170;
+    margin-bottom: 0;
+  }
+
+  .columns-promo .columns-promo-row-media-only,
+  .columns-promo .columns-promo-row-text-only {
+    grid-template-columns: 100%;
+  }
+
+  .columns-promo .columns-promo-row-media-only .columns-promo-media,
+  .columns-promo .columns-promo-row-text-only .columns-promo-text {
+    grid-area: auto;
+  }
+
+  .columns-promo .columns-promo-media::after {
+    width: 192px;
+  }
+
+  .columns-promo .columns-promo-text :is(h1, h2, h3, h4, h5, h6) {
+    max-width: 427px;
+    margin-bottom: 12px;
+  }
+
+  .columns-promo .columns-promo-actions {
+    flex-direction: row;
+  }
+
+  .columns-promo .columns-promo-actions > p {
+    width: auto;
+    margin-bottom: 35px;
+  }
+
+  .columns-promo .columns-promo-actions > p + p {
+    margin-left: 30px;
+  }
+
+  .columns-promo .columns-promo-text a.button:any-link {
+    width: auto;
+  }
+}
+
+@media (width >= 1200px) {
+  .columns-promo {
+    margin: 0;
+    padding: 54px 54px 54px 98px;
+  }
+
+  .columns-promo .columns-promo-row {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 66px;
+  }
+
+  .columns-promo .columns-promo-row .columns-promo-media {
+    top: 32px;
+    max-width: 392px;
+    aspect-ratio: 392 / 220;
+  }
+
+  .columns-promo .columns-promo-media::after {
+    top: -56px;
+    width: 217px;
+  }
+
+  .columns-promo .columns-promo-text :is(h1, h2, h3, h4, h5, h6) {
+    margin-bottom: 20px;
+  }
+
+  .columns-promo .columns-promo-actions > p {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "home",
+      "urls": [
+        "https://www.robertwalters.co.uk/"
+      ],
+      "representativeUrl": "https://www.robertwalters.co.uk/",
+      "description": "Robert Walters UK homepage: video hero, job search, promos, services, areas we recruit in, insights, customer stories",
+      "urlPattern": "/",
+      "blocks": [
+        {
+          "name": "hero-video",
+          "instances": [
+            ".hero-large.hero-large--style-01"
+          ]
+        },
+        {
+          "name": "search-jobs",
+          "instances": [
+            ".rw-jobs-search-box"
+          ]
+        },
+        {
+          "name": "columns-promo",
+          "instances": [
+            ".rw-cta"
+          ]
+        },
+        {
+          "name": "cards-feature",
+          "instances": [
+            ".rw-column-control"
+          ]
+        },
+        {
+          "name": "tabs-areas",
+          "instances": [
+            ".rw-links-content"
+          ]
+        },
+        {
+          "name": "columns-insights",
+          "instances": [
+            ".rw-latest-articles"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "rc2c1c1",
+          "name": "hero",
+          "selector": [
+            ".hero-large.hero-large--style-01"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-video"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc2c1c2",
+          "name": "job-search",
+          "selector": [
+            ".rw-jobs-search-box"
+          ],
+          "style": null,
+          "blocks": [
+            "search-jobs"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc2c1c3",
+          "name": "salary-survey-promo",
+          "selector": [
+            "main .aem-Grid > .container.responsivegrid:nth-of-type(3)"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-promo"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc2c1c4",
+          "name": "our-services",
+          "selector": [
+            "main .aem-Grid > .container.responsivegrid:nth-of-type(4)"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-feature"
+          ],
+          "defaultContent": [
+            ".cmp-container > .text h2"
+          ]
+        },
+        {
+          "id": "rc2c1c5c1",
+          "name": "areas-we-recruit",
+          "selector": [
+            ".links-with-associated-content"
+          ],
+          "style": null,
+          "blocks": [
+            "tabs-areas"
+          ],
+          "defaultContent": [
+            "h2.rw-links-content__title"
+          ]
+        },
+        {
+          "id": "rc2c1c5c2",
+          "name": "insights",
+          "selector": [
+            ".latest-articles-v2"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-insights"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc2c1c5c3",
+          "name": "benefits-guide-promo",
+          "selector": [
+            "main .aem-Grid > .container.responsivegrid:nth-of-type(5) > .cmp-container > .rw-cta"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-promo"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc2c1c5c4",
+          "name": "customer-stories",
+          "selector": [
+            "main .aem-Grid > .container.responsivegrid:nth-of-type(5) > .cmp-container > .rw-column-control"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-feature"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

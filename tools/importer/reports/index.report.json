@@ -1,0 +1,18 @@
+{
+  "status": "success",
+  "url": "https://www.robertwalters.co.uk/",
+  "path": "index",
+  "timestamp": "2026-09-30T21:24:45.096Z",
+  "title": "Robert Walters UK | Leading Headhunting & Recruitment Agency",
+  "template": "home",
+  "blocks": [
+    "hero-video",
+    "search-jobs",
+    "columns-promo",
+    "columns-promo",
+    "cards-feature",
+    "cards-feature",
+    "tabs-areas",
+    "columns-insights"
+  ]
+}

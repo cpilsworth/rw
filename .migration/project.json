@@ -1,0 +1,12 @@
+{
+  "type": "da",
+  "sites": {
+    "rw": {
+      "previewOrg": "cpilsworth",
+      "previewSite": "rw",
+      "contentHostUrl": "https://content.da.live/cpilsworth/rw/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json",
+      "botProtected": true
+    }
+  }
+}

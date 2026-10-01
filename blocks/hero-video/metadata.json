@@ -1,0 +1,20 @@
+{
+  "variantName": "hero-video",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "homepage-hero",
+    "imagePattern": "large-right-video",
+    "structure": "statement + h1 tagline + paragraph + 2 CTAs + video image"
+  },
+  "contentPattern": "1 column. Row 1: image (poster). Row 2: statement text (bold paragraph), H1 tagline, description paragraph, CTA links ('Search for jobs' strong/primary, 'Looking to hire' em/secondary), Vimeo link 'Watch the Video'.",
+  "usage": {
+    "pagesUsing": ["https://www.robertwalters.co.uk/"],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-30"
+  },
+  "options": [],
+  "memberVariantIds": ["hero-video"]
+}

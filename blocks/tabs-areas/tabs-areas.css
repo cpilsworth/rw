@@ -1,0 +1,261 @@
+/* section heading (default content "Areas we recruit in") */
+main > .section.tabs-areas-container {
+  margin-bottom: 60px;
+}
+
+.section.tabs-areas-container > .default-content-wrapper h2 {
+  margin: 0 0 40px;
+  font-size: var(--heading-size-l);
+  font-weight: 700;
+  line-height: 32px;
+}
+
+/* area links */
+.tabs-areas .tabs-areas-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tabs-areas .tabs-areas-item {
+  display: flex;
+}
+
+main .tabs-areas .tabs-areas-item > .tabs-areas-trigger {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 16px 8px;
+  border: 0;
+  background-color: transparent;
+  background-image: none;
+  animation: none;
+  color: var(--text-color);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23px;
+  text-align: left;
+  text-decoration: none;
+  white-space: normal;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.tabs-areas .tabs-areas-trigger-label {
+  display: block;
+}
+
+.tabs-areas .tabs-areas-trigger-text {
+  position: relative;
+  background-image: linear-gradient(90deg, var(--accent-color) 100%, var(--accent-color) 0);
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 2px, 0 2px;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: background-size 2s linear;
+}
+
+.tabs-areas .tabs-areas-item-active .tabs-areas-trigger-text {
+  background-image: none;
+}
+
+.tabs-areas .tabs-areas-trigger:hover .tabs-areas-trigger-text,
+.tabs-areas .tabs-areas-trigger:focus-visible .tabs-areas-trigger-text {
+  animation: link-underline 0.5s;
+}
+
+main .tabs-areas .tabs-areas-item-active > .tabs-areas-trigger {
+  background-color: var(--light-tint-color);
+}
+
+/* preview card: only shown next to the list on larger screens (as on the source) */
+.tabs-areas .tabs-areas-panels {
+  display: none;
+}
+
+.tabs-areas .tabs-areas-panel {
+  grid-area: 1 / 1 / 2 / 2;
+  align-self: start;
+  box-sizing: border-box;
+  max-width: 356px;
+  border: 1px solid var(--border-color);
+  background-color: #fff;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.tabs-areas .tabs-areas-panel[aria-hidden='true'] {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out, visibility 0s linear 0.2s;
+}
+
+.tabs-areas .tabs-areas-panel-image {
+  position: relative;
+  aspect-ratio: 356 / 202;
+  line-height: 0;
+}
+
+.tabs-areas .tabs-areas-panel-image::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  width: 75%;
+  height: 70%;
+  background-color: var(--accent-color);
+  pointer-events: none;
+}
+
+.tabs-areas .tabs-areas-panel-image picture {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.tabs-areas .tabs-areas-panel-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.tabs-areas .tabs-areas-panel-body {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+  letter-spacing: 0.4px;
+}
+
+.tabs-areas .tabs-areas-panel-body h3 {
+  margin: 0 0 12px;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+}
+
+.tabs-areas .tabs-areas-panel-body p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 23px;
+}
+
+.tabs-areas .tabs-areas-panel-body p:has(> a:only-child) {
+  align-self: flex-start;
+  margin-top: 24px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* source .feature-card__cta: 2px pink bar at the bottom of the 24px line box (::after),
+   slides in from the left when the card is hovered/focused */
+main .tabs-areas .tabs-areas-panel-body p > a:any-link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background-image: none;
+  animation: none;
+  font-weight: 600;
+  transition: none;
+}
+
+main .tabs-areas .tabs-areas-panel-body p > a:any-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-color);
+}
+
+main .tabs-areas .tabs-areas-panel-body p > a:any-link:hover,
+main .tabs-areas .tabs-areas-panel-body p > a:any-link:focus-visible {
+  animation: none;
+}
+
+main .tabs-areas .tabs-areas-panel-body p > a:any-link:focus-visible::after,
+main .tabs-areas .tabs-areas-panel:hover .tabs-areas-panel-body p > a:any-link::after {
+  left: -100%;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+/* source nests a second padded container inside the section gutter below the
+   desktop column: 36px below 768px, 40px from 768px (and inside the 1140px column) */
+.section.tabs-areas-container > .default-content-wrapper h2,
+.tabs-areas {
+  margin-inline: 36px;
+}
+
+@media (width >= 600px) {
+  .tabs-areas .tabs-areas-list {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 36px;
+  }
+}
+
+/* source breakpoints (bootstrap md/lg): list 8/12 + card 4/12 from 768px,
+   list 6/12 + card 4/12 with a 2/12 offset from 992px */
+@media (width >= 768px) {
+  main > .section.tabs-areas-container {
+    margin-bottom: 110px;
+  }
+
+  .section.tabs-areas-container > .default-content-wrapper h2,
+  .tabs-areas {
+    margin-inline: 40px;
+  }
+
+  .section.tabs-areas-container > .default-content-wrapper h2 {
+    margin-bottom: 45px;
+  }
+
+  main .tabs-areas .tabs-areas-item > .tabs-areas-trigger {
+    margin-bottom: 24px;
+    padding: 18px 28px;
+  }
+
+  .tabs-areas {
+    display: grid;
+    grid-template-columns: calc(66.667% - 12px) calc(33.333% - 24px);
+    column-gap: 36px;
+    align-items: start;
+  }
+
+  .tabs-areas.tabs-areas-no-panels {
+    grid-template-columns: 1fr;
+  }
+
+  .tabs-areas .tabs-areas-panels {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+@media (width >= 992px) {
+  .tabs-areas {
+    grid-template-columns: calc(50% - 18px) 1fr calc(33.333% - 24px);
+    column-gap: 0;
+  }
+
+  .tabs-areas .tabs-areas-panels {
+    grid-column: 3;
+  }
+}

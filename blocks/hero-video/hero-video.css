@@ -1,0 +1,339 @@
+/* hero-video: dark statement panel overlapping a video poster (source: .hero-large--style-01) */
+
+/* full-bleed: the section wrapper must not constrain the hero */
+.hero-video-container .hero-video-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-video {
+  /* left edge of the pink block (desktop); the text panel sits 32px inside it */
+  --hero-video-inset: calc(50% - 490px);
+  --hero-video-play-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 16'%3E%3Cpath d='M0 0l14 8-14 8z' fill='%23232323'/%3E%3C/svg%3E");
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dark-color);
+  color: #fff;
+}
+
+/* pink decorative block behind the top-left corner of the text panel */
+.hero-video::before {
+  content: '';
+  position: absolute;
+  top: 130px;
+  left: 0;
+  z-index: 1;
+  width: 80px;
+  height: 85px;
+  background-color: var(--accent-color);
+}
+
+/* ---------- media (poster + video launcher) ---------- */
+.hero-video .hero-video-media {
+  position: relative;
+  z-index: 0;
+  order: -1;
+  height: 200px;
+  overflow: hidden;
+}
+
+.hero-video .hero-video-media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* below the desktop layout the source shows the poster at its natural ratio,
+   cropped from the bottom by the fixed-height media box */
+.hero-video .hero-video-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* the source hides the video launcher (and disables the video) below 1024px */
+.hero-video .hero-video-launcher {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #fff;
+  font: inherit;
+  font-size: 22px;
+  line-height: 23px;
+  cursor: pointer;
+}
+
+.hero-video .hero-video-launcher-label {
+  display: none;
+}
+
+.hero-video .hero-video-launcher-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 100%;
+  background: #fff var(--hero-video-play-icon) no-repeat 55% 50% / 15px 17px;
+  opacity: 0.8;
+}
+
+.hero-video .hero-video-player {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ---------- text panel ---------- */
+.hero-video .hero-video-content {
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: auto;
+  column-gap: 16px;
+  width: calc(100% - 40px);
+
+  /* source's 20px bottom margin collapses out of the hero, so it adds no height */
+  margin: -50px auto 0;
+  padding: 24px 16px;
+  background-color: var(--dark-color);
+}
+
+.hero-video.hero-video-no-media .hero-video-content {
+  margin-top: 20px;
+}
+
+.hero-video .hero-video-content > * {
+  grid-column: 1 / -1;
+}
+
+.hero-video .hero-video-content p {
+  margin: 0 0 16px;
+  padding: 0 0 15px;
+  max-width: fit-content;
+  color: #fff;
+  font-size: 18px;
+  line-height: 28.8px;
+}
+
+.hero-video .hero-video-content p.hero-video-statement {
+  max-width: none;
+  margin: 0 0 18px;
+  padding: 0 0 10px;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 42px;
+}
+
+/* h1 tagline: small, light, pink rule on the left, rendered last */
+.hero-video .hero-video-content h1 {
+  order: 5;
+  margin: 30px 0 10px;
+  padding: 0 0 0 30px;
+  border-left: 3px solid var(--accent-color);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 27px;
+  text-align: left;
+}
+
+/* CTAs */
+.hero-video .hero-video-content p.button-wrapper {
+  grid-column: auto;
+  max-width: none;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+main .hero-video .hero-video-content a.button:any-link {
+  width: 100%;
+  padding: 14px 38px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 23px;
+}
+
+main .hero-video .hero-video-content a.button.secondary:any-link {
+  color: #fff;
+}
+
+@media (width >= 600px) {
+  .hero-video::before {
+    top: 177px;
+  }
+
+  .hero-video .hero-video-media {
+    height: 250px;
+  }
+
+  .hero-video .hero-video-content {
+    grid-template-columns: auto auto;
+    padding: 32px 16px;
+  }
+
+  .hero-video .hero-video-content p.hero-video-statement {
+    font-size: 52px;
+    line-height: 1.2;
+  }
+}
+
+@media (width >= 768px) {
+  .hero-video {
+    padding-bottom: 10px;
+  }
+
+  .hero-video::before {
+    top: 180px;
+    width: 144px;
+    height: 120px;
+  }
+
+  .hero-video .hero-video-media {
+    height: 300px;
+  }
+
+  .hero-video .hero-video-content {
+    width: calc(100% - 184px);
+    margin-top: -80px;
+    margin-bottom: 20px;
+    padding: 32px;
+  }
+
+  .hero-video .hero-video-content p.hero-video-statement {
+    font-weight: 700;
+  }
+}
+
+/* source desktop breakpoint: 1024px */
+@media (width >= 1024px) {
+  .hero-video {
+    display: block;
+    padding: 60px 0 40px;
+  }
+
+  .hero-video::before {
+    top: 45px;
+    bottom: 230px;
+    left: var(--hero-video-inset);
+    width: 160px;
+    height: auto;
+  }
+
+  .hero-video .hero-video-media {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    height: auto;
+  }
+
+  .hero-video .hero-video-media img {
+    height: 100%;
+  }
+
+  .hero-video .hero-video-content {
+    grid-template-columns: auto 1fr;
+    width: calc(100% - var(--hero-video-inset) - 64px);
+    max-width: 690px;
+    margin: 16px 0 16px calc(var(--hero-video-inset) + 32px);
+    padding: 64px 48px;
+    box-shadow: 20px 20px 20px -20px rgb(0 0 0 / 20%);
+  }
+
+  .hero-video.hero-video-no-media .hero-video-content {
+    margin-top: 16px;
+  }
+
+  .hero-video .hero-video-content p {
+    padding-right: 170px;
+  }
+
+  .hero-video .hero-video-content p.hero-video-statement {
+    padding-right: 0;
+    font-size: var(--heading-size-xxl);
+    line-height: 76.8px;
+  }
+
+  .hero-video .hero-video-content h1 {
+    padding-right: 50px;
+  }
+
+  main .hero-video .hero-video-content a.button:any-link {
+    width: auto;
+  }
+
+  /* "Watch the Video" link bottom-left of the poster + large centred play disc */
+  .hero-video .hero-video-launcher {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 0 0 64px 256px; /* source: bottom 48px + 16px title margin */
+  }
+
+  .hero-video .hero-video-launcher::before {
+    content: '';
+    position: absolute;
+    top: calc(50% - 34px);
+    left: calc(50% + 50px);
+    width: 68px;
+    height: 68px;
+    border-radius: 100%;
+    background: #fff var(--hero-video-play-icon) no-repeat 55% 50% / 22px 25px;
+    opacity: 0.8;
+  }
+
+  .hero-video .hero-video-launcher-label {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    background-image: linear-gradient(90deg, var(--accent-color) 100%, var(--accent-color) 0);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+  }
+
+  .hero-video .hero-video-launcher-icon {
+    width: 40px;
+    height: 40px;
+    background-size: 14px 16px;
+  }
+}
+
+@media (width >= 1120px) {
+  .hero-video {
+    --hero-video-inset: calc(50% - 570px);
+  }
+
+  .hero-video .hero-video-content {
+    max-width: 770px;
+  }
+}
+
+@media (width >= 1200px) {
+  .hero-video .hero-video-launcher::before {
+    top: calc(50% - 54px);
+    width: 108px;
+    height: 108px;
+    background-size: 34px 39px;
+  }
+}
+
+@media (width >= 1600px) {
+  .hero-video .hero-video-launcher {
+    padding-left: 136px;
+  }
+}
