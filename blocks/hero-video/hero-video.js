@@ -21,7 +21,10 @@ function getEmbed(href) {
   if (hostname.includes('vimeo.com')) {
     const id = pathname.split('/').filter(Boolean).find((part) => /^\d+$/.test(part));
     if (!id) return null;
-    return { type: 'iframe', src: `https://player.vimeo.com/video/${id}?autoplay=1` };
+    return {
+      type: 'iframe',
+      src: `https://player.vimeo.com/video/${id}?autoplay=1&badge=0&byline=0&title=0&portrait=0&dnt=true`,
+    };
   }
   if (hostname.includes('youtu')) {
     const id = hostname.includes('youtu.be')
@@ -33,7 +36,7 @@ function getEmbed(href) {
   return null;
 }
 
-function playVideo(media, embed, title) {
+function createPlayer(embed, title) {
   let player;
   if (embed.type === 'video') {
     player = document.createElement('video');
@@ -49,8 +52,42 @@ function playVideo(media, embed, title) {
     player.setAttribute('allowfullscreen', '');
   }
   player.className = 'hero-video-player';
-  media.classList.add('hero-video-playing');
-  media.replaceChildren(player);
+  return player;
+}
+
+/**
+ * Plays the video in a modal viewer over a blurred page (as on the source site).
+ * The player is created on open and removed on close so playback stops.
+ */
+function openVideoModal(block, embed, title) {
+  const dialog = document.createElement('dialog');
+  dialog.className = 'hero-video-modal';
+  dialog.setAttribute('aria-label', title || 'Video');
+
+  const frame = document.createElement('div');
+  frame.className = 'hero-video-modal-frame';
+  const close = document.createElement('button');
+  close.type = 'button';
+  close.className = 'hero-video-modal-close';
+  close.setAttribute('aria-label', 'Close video');
+  frame.append(close, createPlayer(embed, title));
+  dialog.append(frame);
+
+  const { overflow } = document.body.style;
+  dialog.addEventListener('close', () => {
+    document.body.style.overflow = overflow;
+    dialog.remove();
+  });
+  close.addEventListener('click', () => dialog.close());
+  // a click outside the player lands on the dialog itself (the backdrop area)
+  dialog.addEventListener('click', (e) => {
+    if (e.target === dialog) dialog.close();
+  });
+
+  block.append(dialog);
+  document.body.style.overflow = 'hidden';
+  dialog.showModal();
+  close.focus();
 }
 
 export default function decorate(block) {
@@ -134,7 +171,8 @@ export default function decorate(block) {
       icon.className = 'hero-video-launcher-icon';
       icon.setAttribute('aria-hidden', 'true');
       button.append(text, icon);
-      button.addEventListener('click', () => playVideo(media, embed, label));
+      button.setAttribute('aria-haspopup', 'dialog');
+      button.addEventListener('click', () => openVideoModal(block, embed, label));
       media.append(button);
     } else {
       // unknown provider: keep it as a plain link

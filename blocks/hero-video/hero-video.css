@@ -88,11 +88,77 @@
   opacity: 0.8;
 }
 
-.hero-video .hero-video-player {
-  display: block;
-  width: 100%;
-  height: 100%;
+/* ---------- video modal (top-layer dialog inside the block) ---------- */
+.hero-video .hero-video-modal {
+  overflow: visible;
+  max-width: none;
+  max-height: none;
+  margin: auto;
   border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.hero-video .hero-video-modal::backdrop {
+  background: rgb(0 0 0 / 50%);
+  backdrop-filter: blur(2px);
+}
+
+.hero-video .hero-video-modal-frame {
+  position: relative;
+}
+
+.hero-video .hero-video-modal .hero-video-player {
+  display: block;
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 1140px;
+  height: 220px;
+  border: 0;
+  background: #000;
+}
+
+.hero-video .hero-video-modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  width: 25px;
+  height: 25px;
+  border: 0;
+  border-radius: 100%;
+  padding: 0;
+  background: var(--accent-color) no-repeat center / 11px 11px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M1 1l10 10M11 1L1 11' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  cursor: pointer;
+}
+
+.hero-video .hero-video-modal-close:hover,
+.hero-video .hero-video-modal-close:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (width >= 576px) {
+  .hero-video .hero-video-modal .hero-video-player {
+    height: 540px;
+    padding: 0 40px;
+    background: transparent;
+  }
+
+  .hero-video .hero-video-modal-close {
+    right: 40px;
+  }
+}
+
+@media (width >= 1200px) {
+  .hero-video .hero-video-modal .hero-video-player {
+    height: 640px;
+    padding: 0;
+  }
+
+  .hero-video .hero-video-modal-close {
+    right: 0;
+  }
 }
 
 /* ---------- text panel ---------- */

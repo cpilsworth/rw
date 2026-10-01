@@ -104,12 +104,18 @@ export default function decorate(block) {
     });
   };
 
+  // while the preview is shown, a click only swaps it (navigation is via the preview's CTA);
+  // where the preview is hidden (small screens) authored labels behave as plain links
+  const previewVisible = () => panels.isConnected && getComputedStyle(panels).display !== 'none';
+
   items.forEach((item) => {
     item.trigger.addEventListener('mouseenter', () => activate(item));
     item.trigger.addEventListener('focus', () => activate(item));
-    if (item.trigger.tagName === 'BUTTON') {
-      item.trigger.addEventListener('click', () => activate(item));
-    }
+    item.trigger.addEventListener('click', (e) => {
+      if (item.trigger.tagName === 'A' && !(item.panel && previewVisible())) return;
+      e.preventDefault();
+      activate(item);
+    });
   });
 
   const first = items.find((item) => item.panel);
