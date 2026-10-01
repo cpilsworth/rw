@@ -11,8 +11,16 @@ module.exports = {
     requireConfigFile: false,
   },
   rules: {
-    'import/extensions': ['error', { js: 'always' }], // require js file extensions in imports
+    'import/extensions': ['error', { js: 'always', mjs: 'always' }], // require file extensions in imports
     'linebreak-style': ['error', 'unix'], // enforce unix linebreaks
     'no-param-reassign': [2, { props: false }], // allow modifying properties of param
   },
+  overrides: [
+    {
+      files: ['tools/json2html/**/*.mjs'],
+      rules: {
+        'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+      },
+    },
+  ],
 };

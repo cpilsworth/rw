@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="{{metadata.locale}}">
+  <head>
+    <meta charset="utf-8">
+    <title>{{metadata.title}}</title>
+    <meta name="description" content="{{metadata.description}}">
+    <meta name="template" content="job-page">
+    <meta property="og:title" content="{{metadata.title}}">
+    <meta property="og:description" content="{{metadata.description}}">
+    <meta property="og:image" content="{{metadata.image}}">
+    <link rel="canonical" href="{{source.url}}">
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div>
+        <div class="job-detail">
+          <div>
+            <div>
+              {{#breadcrumbs.length}}
+              <ol>
+                {{#breadcrumbs}}
+                <li>{{#href}}<a href="{{href}}">{{label}}</a>{{/href}}{{^href}}{{label}}{{/href}}</li>
+                {{/breadcrumbs}}
+              </ol>
+              {{/breadcrumbs.length}}
+              <h1>{{job.title}}</h1>
+              {{#actions.save}}
+              <p><a href="{{href}}">{{label}}</a></p>
+              {{/actions.save}}
+            </div>
+          </div>
+          <div>
+            <div>
+              <p>{{job.title}}{{#job.salary.description}}<br>Salary: {{.}}{{/job.salary.description}}{{#job.location.name}}<br>Location: {{.}}{{/job.location.name}}</p>
+              {{#job.description.highlights}}
+              <ul>
+                {{#items}}
+                <li>{{.}}</li>
+                {{/items}}
+              </ul>
+              {{/job.description.highlights}}
+              {{#job.description.sections}}
+              <h2>{{heading}}</h2>
+              {{#paragraphs}}
+              <p>{{.}}</p>
+              {{/paragraphs}}
+              {{#list}}
+              <ul>
+                {{#items}}
+                <li>{{.}}</li>
+                {{/items}}
+              </ul>
+              {{/list}}
+              {{/job.description.sections}}
+              {{#job.description.disclaimer}}
+              <p>{{.}}</p>
+              {{/job.description.disclaimer}}
+              {{#actions.apply}}
+              <p><strong><a href="{{href}}">{{label}}</a></strong></p>
+              {{/actions.apply}}
+            </div>
+            <div>
+              <h2>About the job</h2>
+              {{#job.employerLogo}}
+              <picture><img src="{{src}}" alt="{{alt}}" width="{{width}}" height="{{height}}" loading="lazy"></picture>
+              {{/job.employerLogo}}
+              <ul>
+                {{#job.contractType}}<li><strong>Contract Type:</strong> {{.}}</li>{{/job.contractType}}
+                {{#job.specialism}}<li><strong>Specialism:</strong> {{.}}</li>{{/job.specialism}}
+                {{#job.focus}}<li><strong>Focus:</strong> {{.}}</li>{{/job.focus}}
+                {{#job.industry}}<li><strong>Industry:</strong> {{.}}</li>{{/job.industry}}
+                {{#job.salary.display}}<li><strong>Salary:</strong> {{.}}</li>{{/job.salary.display}}
+                {{#job.workplaceType}}<li><strong>Workplace Type:</strong> {{.}}</li>{{/job.workplaceType}}
+                {{#job.experienceLevel}}<li><strong>Experience Level:</strong> {{.}}</li>{{/job.experienceLevel}}
+                {{#job.location.name}}<li><strong>Location:</strong> {{.}}</li>{{/job.location.name}}
+                {{#job.reference}}<li><strong>Job Reference:</strong> {{.}}</li>{{/job.reference}}
+                {{#job.datePostedDisplay}}<li><strong>Date posted:</strong> {{.}}</li>{{/job.datePostedDisplay}}
+                {{#job.consultant.name}}<li><strong>Consultant:</strong> {{.}}</li>{{/job.consultant.name}}
+              </ul>
+              {{#job.consultant.phone}}
+              <p><strong>Phone number:</strong> <a href="tel:{{number}}">{{display}}</a></p>
+              {{/job.consultant.phone}}
+              {{#job.consultant.email}}
+              <p><a href="mailto:{{.}}">{{.}}</a></p>
+              {{/job.consultant.email}}
+              {{#actions.apply}}
+              <p><strong><a href="{{href}}">{{label}}</a></strong></p>
+              {{/actions.apply}}
+              {{#actions.save}}
+              <p><em><a href="{{href}}">{{label}}</a></em></p>
+              {{/actions.save}}
+              {{#share}}
+              <h3>{{heading}}</h3>
+              {{#links.length}}
+              <ul>
+                {{#links}}
+                <li><a href="{{href}}">{{label}}</a></li>
+                {{/links}}
+              </ul>
+              {{/links.length}}
+              {{#copy}}
+              <p><a href="{{href}}">{{label}}</a></p>
+              {{/copy}}
+              {{/share}}
+            </div>
+          </div>
+        </div>
+      </div>
+      {{#relatedJobs}}
+      <div>
+        <h2>{{heading}}</h2>
+        {{#more}}
+        <p><em><a href="{{href}}">{{label}}</a></em></p>
+        {{/more}}
+      </div>
+      {{/relatedJobs}}
+    </main>
+    <footer></footer>
+  </body>
+</html>

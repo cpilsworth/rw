@@ -5,4 +5,5 @@ LICENSE
 package.json
 package-lock.json
 test/*
+tools/json2html/*
 sync-block-collection.sh
