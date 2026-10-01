@@ -43,6 +43,8 @@ ranges in the source description and sidebar are deliberately preserved.
 The dynamically populated "Similar jobs" cards are not fabricated; the section
 retains its heading and official "View more jobs" link.
 
+For subsequent JSON updates, see [the data preview/publish guide](data/README.md).
+
 [`templates/job-detail.html`](templates/job-detail.html) is a Mustache template for
 [AEM JSON2HTML](https://www.aem.live/developer/json2html). It generates BYOM sections
 and a `job-detail` block. Styling and behavior reuse this repository's
