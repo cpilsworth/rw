@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "path": "/legal/jobs/personalinjury/1914237-clinical-negligence-solicitor",
+  "source": {
+    "url": "https://www.robertwalters.co.uk/legal/jobs/personalinjury/1914237-clinical-negligence-solicitor.html",
+    "capturedOn": "2026-10-01",
+    "notes": [
+      "The source description quotes GBP 50,000-60,000 plus bonus and benefits, while the sidebar and salary microdata quote GBP 50,000-65,000. Both have been preserved.",
+      "Similar jobs are loaded dynamically on the source site. No recommendation cards were embedded in the captured HTML.",
+      "Apply and save actions link to the official job page. This prototype does not submit applications or access Robert Walters accounts."
+    ]
+  },
+  "metadata": {
+    "title": "Clinical Negligence Solicitor",
+    "description": "Clinical Negligence Solicitor\n\nSalary: \u00a350,000-\u00a360,000 per annum (dependent on experience) + bonus + benefits\n\nLocation: Nottingham",
+    "locale": "en-GB",
+    "image": "https://www.robertwalters.co.uk/content/dam/robert-walters-redesign/global/images/misc/new-opportunity.png"
+  },
+  "breadcrumbs": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Expertise",
+      "href": "https://www.robertwalters.co.uk/jobs.html"
+    },
+    {
+      "label": "Job Detail"
+    }
+  ],
+  "job": {
+    "id": "1914237",
+    "title": "Clinical Negligence Solicitor",
+    "reference": "4INCIW-B7890E03",
+    "contractType": "Permanent",
+    "employmentType": "FULL_TIME",
+    "specialism": "Legal",
+    "focus": "Personal Injury",
+    "industry": "Legal",
+    "workplaceType": "Hybrid",
+    "experienceLevel": "Associate",
+    "datePosted": "2026-10-01",
+    "datePostedDisplay": "1 October 2026",
+    "validThrough": "2026-11-30",
+    "location": {
+      "name": "Nottingham",
+      "region": "Nottinghamshire",
+      "country": "GB",
+      "postalCode": "NG1 1LN"
+    },
+    "salary": {
+      "description": "\u00a350,000-\u00a360,000 per annum (dependent on experience) + bonus + benefits",
+      "display": "\u00a350,000 - \u00a365,000 per annum",
+      "currency": "GBP",
+      "minValue": 50000,
+      "maxValue": 65000,
+      "unitText": "YEAR"
+    },
+    "employerLogo": {
+      "src": "https://www.robertwalters.co.uk/content/dam/robert-walters/global/images/logos/new-generic-logos/law-firm.png",
+      "alt": "Law firm",
+      "width": 288,
+      "height": 162
+    },
+    "hiringOrganization": {
+      "name": "Robert Walters",
+      "sameAs": "https://www.robertwalters.co.uk",
+      "logo": "https://www.robertwalters.co.uk/content/dam/robert-walters/global/images/logos/web-logos/square-logo.png"
+    },
+    "consultant": {
+      "name": "Laura Gripton",
+      "phone": {
+        "display": "+44 121260 2512",
+        "number": "+441212602512"
+      },
+      "email": "laura.gripton@robertwalters.com"
+    },
+    "description": {
+      "highlights": {
+        "items": [
+          "Join one of the UK's top clinical negligence teams, working on high-profile cases involving birth injuries, cancer misdiagnosis, surgical errors, and more, where your expertise will directly support clients during life-changing events.",
+          "Benefit from a truly supportive and inclusive environment that prioritises your professional development, wellbeing, and work-life balance through flexible working arrangements, generous holiday allowances, health support, and volunteering opportunities.",
+          "Work collaboratively with experienced partners and senior lawyers while managing your own caseload, gaining exposure to intellectually stimulating work that will enhance your skills and provide genuine career progression."
+        ]
+      },
+      "sections": [
+        {
+          "heading": "What you'll do:",
+          "list": {
+            "items": [
+              "Manage your own caseload of clinical negligence matters under appropriate supervision, ensuring each case receives meticulous attention and care throughout its lifecycle.",
+              "Take detailed instructions from clients and provide clear, practical legal advice tailored to their unique circumstances, supporting them through sensitive and often life-altering situations.",
+              "Build strong relationships with clients by delivering an exceptional client experience rooted in empathy, understanding, and trust at every stage of the process.",
+              "Assist partners and senior team members on complex and high-value cases, contributing your insights while learning from some of the most knowledgeable professionals in the field.",
+              "Review cases regularly with supervisors to ensure legal strategies align with best practices and uphold the highest standards of client service and legal excellence.",
+              "Collaborate closely with colleagues across the wider team to achieve optimal outcomes for clients by sharing knowledge, resources, and support in a communal environment.",
+              "Secure interim payments wherever possible to enable access to rehabilitation services, specialist care, housing adaptations, or other vital support before claims are concluded.",
+              "Engage in ongoing professional development activities to stay abreast of developments in medical law and further enhance your technical skills within a nurturing setting.",
+              "Contribute positively to the team's inclusive culture by participating in responsible business programmes focused on social responsibility, community investment, environmental sustainability, and pro bono work."
+            ]
+          }
+        },
+        {
+          "heading": "What you bring:",
+          "list": {
+            "items": [
+              "3+ years' post-qualification experience gained within either claimant or defendant medical negligence practice is highly desirable for this position.",
+              "Demonstrated ability to manage your own caseload of clinical negligence matters independently while maintaining high standards of accuracy and diligence.",
+              "Strong technical knowledge combined with analytical skills that enable you to assess complex medical evidence and develop effective legal strategies.",
+              "Excellent attention to detail which ensures thorough preparation of documents and careful review of all case materials throughout proceedings.",
+              "Commercial awareness paired with a proactive approach allows you to anticipate challenges in case management and respond effectively for optimal results.",
+              "Ability to work collaboratively as part of a supportive team environment while also being dependable when working autonomously on individual tasks.",
+              "Outstanding organisational skills empower you to prioritise competing demands efficiently within what can sometimes be a fast-paced setting without compromising quality.",
+              "Exceptional communication abilities are essential for explaining intricate legal concepts clearly to clients who may be unfamiliar with legal processes or terminology.",
+              "A genuine commitment to delivering excellent client care by showing empathy towards those experiencing difficult or sensitive situations."
+            ]
+          }
+        },
+        {
+          "heading": "What sets this company apart:",
+          "paragraphs": [
+            "This organisation stands out as one of the UK's foremost law firms due not only to its legal expertise but also its unwavering commitment to people - both clients and colleagues alike.",
+            "The firm\u2019s Medical Negligence team has earned national recognition for handling some of the most significant clinical negligence cases across obstetrics, neurosurgery, cardiac care, psychiatric treatment, cancer misdiagnosis, GP errors, Accident & Emergency incidents, cerebral palsy matters, birth injuries, surgical mistakes, spinal injuries, orthopaedic issues - and many more areas where expert advocacy can change lives.",
+            "What truly distinguishes this employer is its holistic approach: employees are supported from day one through flexible working options tailored around personal needs; generous annual leave entitlements (with opportunities for additional days); comprehensive health benefits including digital GP access; competitive pension schemes; paid volunteering days empowering staff involvement in causes close to their hearts; lifestyle discounts; mental health initiatives; transparent pay reviews; bonus eligibility; robust onboarding processes ensuring fairness; responsible business programmes championing diversity & inclusion; active community investment; environmental stewardship; pro bono commitments\u2014and above all\u2014a culture where everyone\u2019s path is respected so each colleague can flourish authentically."
+          ]
+        },
+        {
+          "heading": "What's next:",
+          "paragraphs": [
+            "If you are ready to take the next step in your career as a Clinical Negligence Solicitor within an award-winning team dedicated to making a real difference every day\u2014this is your moment!",
+            "Apply today by clicking on the link provided or contact laura.gripton@robertwalters.com for further details."
+          ]
+        }
+      ],
+      "disclaimer": "Robert Walters Operations Limited is an employment business and employment agency and welcomes applications from all candidates"
+    }
+  },
+  "actions": {
+    "apply": {
+      "label": "Apply",
+      "href": "https://www.robertwalters.co.uk/legal/jobs/personalinjury/1914237-clinical-negligence-solicitor.html#job-apply"
+    },
+    "save": {
+      "label": "Save job",
+      "href": "https://www.robertwalters.co.uk/legal/jobs/personalinjury/1914237-clinical-negligence-solicitor.html#savedJobCheckbox"
+    }
+  },
+  "share": {
+    "heading": "Share",
+    "links": [
+      {
+        "label": "Email",
+        "href": "mailto:?subject=Clinical%20Negligence%20Solicitor&body=https://www.robertwalters.co.uk/legal/jobs/personalinjury/1914237-clinical-negligence-solicitor.html"
+      },
+      {
+        "label": "X",
+        "href": "https://twitter.com/share?text=Clinical%20Negligence%20Solicitor&url=https://www.robertwalters.co.uk/legal/jobs/personalinjury/1914237-clinical-negligence-solicitor.html"
+      },
+      {
+        "label": "Facebook",
+        "href": "https://www.facebook.com/sharer.php?u=https://www.robertwalters.co.uk/legal/jobs/personalinjury/1914237-clinical-negligence-solicitor.html"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/shareArticle?url=https://www.robertwalters.co.uk/legal/jobs/personalinjury/1914237-clinical-negligence-solicitor.html"
+      }
+    ],
+    "copy": {
+      "label": "Copy link",
+      "href": "https://www.robertwalters.co.uk/legal/jobs/personalinjury/1914237-clinical-negligence-solicitor.html#copy-job-link"
+    }
+  },
+  "relatedJobs": {
+    "heading": "Similar jobs",
+    "more": {
+      "label": "View more jobs",
+      "href": "https://www.robertwalters.co.uk/jobs.html"
+    }
+  }
+}
